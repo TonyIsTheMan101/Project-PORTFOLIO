@@ -536,6 +536,30 @@ section .title::after{
   color: rgb(255, 1, 1);
   background: none;
 }
+.button
+{
+  display: flex;
+  align-items: center;
+}
+  .button-area button{
+  color: #fff;
+  display: block;
+  width: 160px!important;
+  height: 45px;
+  outline: none;
+  font-size: 18px;
+  font-weight: 500;
+  border-radius: 6px;
+  cursor: pointer;
+  flex-wrap: nowrap;
+  background: rgb(255, 1, 1);
+  border: 2px solid rgb(255, 1, 1);
+  transition: all 0.3s ease;
+}
+.button-area button:hover{
+  color: rgb(255, 1, 1);
+  background: none;
+}
 /* footer section styling */
 footer{
     background: #111;
