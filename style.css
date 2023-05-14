@@ -25,6 +25,27 @@ html{
 ::-webkit-scrollbar-thumb:hover {
     background: #ffbb00;
 }
+/* New button */
+.button {
+  color: #fff;
+  display: block;
+  width: 160px!important;
+  height: 45px;
+  outline: none;
+  font-size: 18px;
+  font-weight: 500;
+  border-radius: 6px;
+  cursor: pointer;
+  flex-wrap: nowrap;
+  background: rgb(0, 140, 186);
+  border: 2px solid rgb(0, 140, 186);
+  transition: all 0.3s ease;
+}
+
+.new-button:hover {
+  color: rgb(0, 140, 186);
+  background: none;
+}
 
 /* all similar content styling codes */
 section{
