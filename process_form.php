@@ -1,26 +1,21 @@
 <?php
-    $name = $_POST['name'];
-    $visitor_email = $_POST['email']
-    $message = $_POST['message']
 
- 
-    $email_from = 'doraresta@hotmail.com';
+// Get the form data
+$name = $_POST['name'];
+$email = $_POST['email'];
+$subject = $_POST['subject'];
+$message = $_POST['message'];
 
-    $email_subject = "New Client Request/Contact Me Form";
+// Send an email with the form data
+$to = 'youremail@example.com';
+$subject = 'New message from your website';
+$body = "Name: $name\n\nEmail: $email\n\nSubject: $subject\n\nMessage: $message";
+$headers = "From: $email";
 
-    $email_body = "User Name: $name. \n".
-                    "User Email: $visitor_email.\n".
-                        "User Message: $message.\n";
-
-
-    $to = "drcounsellingservices.com, doraresta@hotmail.com"
-
-    $headers = "From: $email_from \r\n";
-
-    $headers .= "Reply-To: $visitor_email \r\n";
-
-    mail($to,$email_subject,$email_body,$headers)
-
-    header("Location: getincontact.html");
+if (mail($to, $subject, $body, $headers)) {
+  echo 'Message sent successfully!';
+} else {
+  echo 'An error occurred. Please try again later.';
+}
 
 ?>
