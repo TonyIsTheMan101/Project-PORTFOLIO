@@ -121,6 +121,39 @@ form.addEventListener('submit', (event) => {
       encodeURIComponent(messageInput.value)
   );
 });
+    const form = document.querySelector("form");
+
+form.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    const name = form.querySelector("[name='name']").value;
+    const email = form.querySelector("[name='email']").value;
+    const subject = form.querySelector("[name='subject']").value;
+    const message = form.querySelector("[name='message']").value;
+
+    fetch("send-email.php", {
+        method: "POST",
+        body: new FormData(form)
+    })
+    .then(response => response.json())
+    .then(data => {
+        const status = data.status;
+        const message = data.message;
+
+        const messageElement = document.createElement("div");
+        messageElement.textContent = message;
+
+        if (status === "success") {
+            messageElement.classList.add("success");
+        } else {
+            messageElement.classList.add("error");
+        }
+
+        form.parentNode.appendChild(messageElement);
+    })
+    .catch(error => console.error(error));
+});
+
 
 
 });
