@@ -542,6 +542,28 @@ section .title::after{
     font-family: 'Poppins', sans-serif;
     transition: all 0.3s ease;
 }
+/* Button in Contact Me section */
+.contact-btn {
+  color: #fff;
+  display: block;
+  width: 160px!important;
+  height: 45px;
+  outline: none;
+  font-size: 18px;
+  font-weight: 500;
+  border-radius: 6px;
+  cursor: pointer;
+  flex-wrap: nowrap;
+  background: rgb(255, 1, 1);
+  border: 2px solid rgb(255, 1, 1);
+  transition: all 0.3s ease;
+}
+
+.contact-btn:hover {
+  color: rgb(255, 1, 1);
+  background: none;
+}
+
 .contact .right form .field input:focus,
 .contact .right form .textarea textarea:focus{
     border-color: #b3b3b3;
