@@ -70,4 +70,57 @@ $(document).ready(function(){
             }
         }
     });
+   const form = document.querySelector('.contact form');
+const nameInput = document.querySelector('.contact .name input');
+const emailInput = document.querySelector('.contact .email input');
+const subjectInput = document.querySelector('.contact .subject input');
+const messageInput = document.querySelector('.contact .textarea textarea');
+const button = document.querySelector('.contact button');
+
+form.addEventListener('submit', (event) => {
+  event.preventDefault(); // Prevent form submission
+
+  // Disable the button to prevent multiple submissions
+  button.disabled = true;
+
+  // Show a loading indicator
+  button.innerHTML = 'Sending...';
+
+  // Send the form data to a server using an HTTP request
+  const xhr = new XMLHttpRequest();
+  xhr.open('POST', 'send-email.php', true);
+  xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState === XMLHttpRequest.DONE) {
+      if (xhr.status === 200) {
+        // Success: show a success message
+        button.innerHTML = 'Message sent!';
+        form.reset();
+        setTimeout(() => {
+          button.disabled = false;
+          button.innerHTML = 'Send message';
+        }, 3000);
+      } else {
+        // Error: show an error message
+        button.innerHTML = 'Error sending message';
+        setTimeout(() => {
+          button.disabled = false;
+          button.innerHTML = 'Send message';
+        }, 3000);
+      }
+    }
+  };
+  xhr.send(
+    'name=' +
+      encodeURIComponent(nameInput.value) +
+      '&email=' +
+      encodeURIComponent(emailInput.value) +
+      '&subject=' +
+      encodeURIComponent(subjectInput.value) +
+      '&message=' +
+      encodeURIComponent(messageInput.value)
+  );
+});
+
+
 });
