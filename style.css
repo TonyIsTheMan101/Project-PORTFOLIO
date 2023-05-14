@@ -10,43 +10,6 @@
 html{
     scroll-behavior: smooth;
 }
-/* General button style */
-button {
-  display: inline-block;
-  padding: 10px 20px;
-  border-radius: 5px;
-  background-color: #008CBA;
-  color: white;
-  text-align: center;
-  text-decoration: none;
-  font-size: 16px;
-  margin: 10px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-button:hover {
-  background-color: #0077B5;
-}
-
-/* Button in Contact Me section */
-.contact-btn {
-  display: inline-block;
-  padding: 10px 20px;
-  border-radius: 5px;
-  background-color: #4CAF50;
-  color: white;
-  text-align: center;
-  text-decoration: none;
-  font-size: 16px;
-  margin: 10px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.contact-btn:hover {
-  background-color: #3e8e41;
-}
 
 /* custom scroll bar */
 ::-webkit-scrollbar {
