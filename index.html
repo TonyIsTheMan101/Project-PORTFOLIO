@@ -161,7 +161,7 @@
                             <i class="fas fa-user"></i>
                             <div class="info">
                                 <div class="head">Name</div>
-                                <div class="sub-title">Dora</div>
+                                <div class="sub-title">Dora Resta</div>
                             </div>
                         </div>
                         <div class="row">
@@ -175,18 +175,30 @@
                             <i class="fas fa-envelope"></i>
                             <div class="info">
                                 <div class="head">Email</div>
-                                <div class="sub-title">drcounsellingservices@gmail.com</div>
+                                <div class="sub-title">drcounsellingservices@gmail.com/doraresta@hotmail.com</div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="column right">
                     <div class="text">Message me</div>
-                     
-                    <div class="button-area">
-                        <a href "getincontact.html">
+                    <form action="process_form.php" method="post">
+                        <div class="fields">
+                            <div class="field name">
+                                <input type="text" placeholder="Name" required>
+                            </div>
+                            <div class="field email">
+                                <input type="email" placeholder="Email" required>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <input type="text" placeholder="Subject" required>
+                        </div>
+                        <div class="field textarea">
+                            <textarea cols="30" rows="10" placeholder="Message.." required></textarea>
+                        </div>
+                        <div class="button-area">
                             <button type="submit">Send message</button>
-                        </a>
                         </div>
                     </form>
                 </div>
@@ -195,9 +207,10 @@
     </section>
 
     <footer>
-        </span> Created By Dora | Copyright © 2023 All Rights Reserved.</span>
+        </span> Created Your Name | copyright © 2023 All rights reserved.</span>
     </footer>
 
     <script src="script.js"></script>
 </body>
 </html>
+
